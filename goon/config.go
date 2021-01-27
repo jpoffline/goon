@@ -1,4 +1,4 @@
-package main
+package goon
 
 import "fmt"
 
@@ -38,7 +38,7 @@ func NewConfig() Config {
 	c.hx2 = c.hx * c.hx
 	c.hy2 = c.hx * c.hx
 	c.ht2 = c.ht * c.ht
-	c.ntimesteps = 100
+	c.ntimesteps = 200
 	c.damping.cut = 100
 	c.damping.mag = 5.0
 	c.field.ncomponents = 1
@@ -52,4 +52,5 @@ func (c *Config) Print() {
 	fmt.Println("(Nx, Ny) = ", c.grid.nx, c.grid.ny)
 	fmt.Println("(hx, ht) = ", c.hx, c.ht)
 	fmt.Println("outloc = ", c.outloc)
+	fmt.Println("Num timesteps = ", c.ntimesteps)
 }

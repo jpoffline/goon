@@ -30,16 +30,16 @@ type Config struct {
 
 func NewConfig() Config {
 	c := Config{}
-	c.grid.nx = 105
-	c.grid.ny = 105
-	c.ht = 0.01
-	c.hx = 0.1
+	c.grid.nx = 100
+	c.grid.ny = 100
+	c.ht = 0.1
+	c.hx = 0.2
 	c.hy = c.hx
 	c.hx2 = c.hx * c.hx
-	c.hy2 = c.hx * c.hx
+	c.hy2 = c.hx2
 	c.ht2 = c.ht * c.ht
 	c.ntimesteps = 200
-	c.damping.cut = 100
+	c.damping.cut = 200
 	c.damping.mag = 5.0
 	c.field.ncomponents = 1
 	c.outloc = "out"

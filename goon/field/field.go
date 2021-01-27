@@ -62,8 +62,8 @@ func (f *Field) CalcDpot(i, j int) {
 
 }
 
-func (f *Field) Update(i, ip1, im1, j, jp1, jm1, nc int, hx2, ht2, fac1, fac2 float64, fp1 *Field) {
-	for c := 0; c < nc; c++ {
+func (f *Field) Update(i, ip1, im1, j, jp1, jm1 int, hx2, ht2, fac1, fac2 float64, fp1 *Field) {
+	for c := 0; c < f.ncomponents; c++ {
 		f.CalcDpot(i, j)
 		lap := f.LaplacianForComponent(c, i, ip1, im1, j, jp1, jm1, hx2)
 		eom := lap - f.DpotValue(c)
